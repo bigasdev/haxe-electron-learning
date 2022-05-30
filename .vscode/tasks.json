@@ -1,0 +1,44 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+
+		{
+			"label": "Current Haxe config",
+			"type": "haxe",
+			"args": "active configuration",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "never",
+				"revealProblems": "onProblem"
+			}
+		},
+
+
+		{
+			"label": "Renderer debug",
+			"type": "hxml",
+			"file": "renderer.debug.hxml",
+			"presentation": {
+				"reveal": "never",
+				"revealProblems": "onProblem"
+			},
+			"group": "build"
+		},
+
+
+		{
+			"label": "Main debug",
+			"type": "hxml",
+			"file": "main.debug.hxml",
+			"presentation": {
+				"reveal": "never",
+				"revealProblems": "onProblem"
+			},
+			"group": "build"
+		}
+
+	]
+}

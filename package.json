@@ -1,0 +1,53 @@
+{
+	"name": "electronbase",
+	"version": "0.8.2",
+	"main": "electron/appAssets/js/electron.main.js",
+	"productName": "Electron base",
+	"author": "Sebastien Benard",
+	"description": "2D level editor",
+	"scripts": {
+		"start": "electron .",
+		"compile": "haxe main.hxml  &&  haxe renderer.hxml",
+		"pack-prepare": "npm run compile",
+		"pack-test": "npm run pack-prepare  &&  electron-builder build --win --dir --publish never",
+		"pack-win": "npm run pack-prepare  &&  electron-builder build --win --x64 --ia32",
+		"pack-macos": "npm run pack-prepare  &&  electron-builder build --mac --publish never",
+		"pack-linux-x86": "npm run pack-prepare  &&  electron-builder build --linux --publish never"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/deepnight/electronBase.git"
+	},
+	"dependencies": {
+		"electron-updater": "^4.3.5"
+	},
+	"devDependencies": {
+		"electron": "^12",
+		"electron-builder": "^22.9.1"
+	},
+	"build": {
+		"appId": "com.deepnight.electronBase",
+		"artifactName": "${productName} ${version} installer.${ext}",
+		"directories": {
+			"buildResources": "electron/electronBuilderAssets",
+			"output": "electron/redist"
+		},
+		"extraFiles": [],
+		"files": [
+			"electron/appAssets",
+			"package.json"
+		],
+		"fileAssociations": [],
+		"nsis": {
+			"oneClick": true,
+			"shortcutName": "Electron base"
+		},
+		"win": {
+			"target": "nsis",
+			"publish": [
+				"github"
+			]
+		},
+		"mac": {}
+	}
+}

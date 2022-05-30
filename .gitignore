@@ -1,0 +1,11 @@
+# General files
+*.map
+*.css
+.tmp
+node_modules
+
+# Build files
+electron/appAssets/js/electron.*
+
+# VScode
+.vscode/settings.json
